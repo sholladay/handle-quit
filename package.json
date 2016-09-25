@@ -1,0 +1,55 @@
+{
+  "name": "handle-quit",
+  "version": "0.0.0",
+  "description": "Teach your process to shutdown gracefully.",
+  "homepage": "https://github.com/sholladay/handle-quit",
+  "main": "index.js",
+  "author": {
+    "name": "Seth Holladay",
+    "url": "http://seth-holladay.com",
+    "email": "me@seth-holladay.com"
+  },
+  "scripts": {
+    "test": "xo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sholladay/handle-quit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sholladay/handle-quit/issues",
+    "email": "me@seth-holladay.com"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "license": "MPL-2.0",
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "eslint-config-tidy": "^0.3.0",
+    "xo": "^0.16.0"
+  },
+  "keywords": [
+    "quit",
+    "exit",
+    "long",
+    "running",
+    "server",
+    "process",
+    "terminal",
+    "CLI",
+    "SIGINT",
+    "interrupt",
+    "zero",
+    "downtime",
+    "no-downtime",
+    "zero-downtime",
+    "deploy",
+    "deployment"
+  ],
+  "xo": {
+    "extend": "tidy"
+  }
+}
