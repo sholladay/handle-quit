@@ -25,14 +25,16 @@ const handleQuit = require('handle-quit');
 Make sure your program shuts down gracefully or quickly, as necessary.
 
 ```js
-handleQuite(server.close);
+handleQuit(() => {
+	server.close();
+});
 ```
 
 ## API
 
 ### handleQuit(listener)
 
-Listens for SIGINT and runs a graceful shutdown on the first signal. Calls `process.exit()` upon any future SIGINT signals. Relevant shutdown messages are also printed to the console.
+Listens for [SIGINT](https://en.wikipedia.org/wiki/Unix_signal#POSIX_signals) and runs a graceful shutdown on the first signal. Calls `process.exit()` upon any future SIGINT signals. Relevant shutdown messages are also printed to the console.
 
 #### listener
 
