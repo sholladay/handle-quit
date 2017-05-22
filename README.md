@@ -26,7 +26,7 @@ Make sure your program shuts down gracefully or quickly, as necessary.
 
 ```js
 handleQuit(() => {
-	server.close();
+    server.close();
 });
 ```
 
