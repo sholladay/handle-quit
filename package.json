@@ -1,59 +1,59 @@
 {
-  "name": "handle-quit",
-  "version": "0.1.1",
-  "description": "Teach your process to shutdown gracefully.",
-  "homepage": "https://github.com/sholladay/handle-quit",
-  "main": "index.js",
-  "author": {
-    "name": "Seth Holladay",
-    "url": "http://seth-holladay.com",
-    "email": "me@seth-holladay.com"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:sholladay/handle-quit.git"
-  },
-  "bugs": {
-    "url": "https://github.com/sholladay/handle-quit/issues",
-    "email": "me@seth-holladay.com"
-  },
-  "engines": {
-    "node": ">=6"
-  },
-  "license": "MPL-2.0",
-  "files": [
-    "index.js"
-  ],
-  "dependencies": {
-    "chalk": "^1.1.3"
-  },
-  "devDependencies": {
-    "ava": "^0.19.1",
-    "eslint-config-tidy": "^0.4.2",
-    "xo": "^0.17.1"
-  },
-  "keywords": [
-    "quit",
-    "exit",
-    "long",
-    "running",
-    "server",
-    "process",
-    "terminal",
-    "CLI",
-    "SIGINT",
-    "interrupt",
-    "zero",
-    "downtime",
-    "no-downtime",
-    "zero-downtime",
-    "deploy",
-    "deployment"
-  ],
-  "xo": {
-    "extend": "tidy"
-  }
+    "name": "handle-quit",
+    "version": "0.1.1",
+    "description": "Teach your process to shutdown gracefully.",
+    "homepage": "https://github.com/sholladay/handle-quit",
+    "main": "index.js",
+    "author": {
+        "name": "Seth Holladay",
+        "url": "http://seth-holladay.com",
+        "email": "me@seth-holladay.com"
+    },
+    "scripts": {
+        "test": "xo && ava"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:sholladay/handle-quit.git"
+    },
+    "bugs": {
+        "url": "https://github.com/sholladay/handle-quit/issues",
+        "email": "me@seth-holladay.com"
+    },
+    "engines": {
+        "node": ">=6"
+    },
+    "license": "MPL-2.0",
+    "files": [
+        "index.js"
+    ],
+    "dependencies": {
+        "chalk": "^1.1.3"
+    },
+    "devDependencies": {
+        "ava": "^0.19.1",
+        "eslint-config-tidy": "^0.4.2",
+        "xo": "^0.17.1"
+    },
+    "keywords": [
+        "quit",
+        "exit",
+        "long",
+        "running",
+        "server",
+        "process",
+        "terminal",
+        "CLI",
+        "SIGINT",
+        "interrupt",
+        "zero",
+        "downtime",
+        "no-downtime",
+        "zero-downtime",
+        "deploy",
+        "deployment"
+    ],
+    "xo": {
+        "extend": "tidy"
+    }
 }
