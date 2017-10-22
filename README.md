@@ -26,21 +26,33 @@ Make sure your program shuts down gracefully or quickly, as necessary.
 
 ```js
 handleQuit(() => {
-    server.close();
+	server.close();
 });
 ```
+
+## Use with PM2
+
+Simply use `handleQuit()` in the main entry of your CLI or server as shown above and [graceful stop](http://pm2.keymetrics.io/docs/usage/signals-clean-restart/#graceful-stop) will automatically be enabled for your application. .
+
+Just in case something goes wrong, `--kill-timeout` tells PM2 how long it should wait before assuming the app is dead.
+
+Don't forget about graceful _start_, see [app-ready](https://github.com/sholladay/app-ready).
 
 ## API
 
 ### handleQuit(listener)
 
-Listens for [SIGINT](https://en.wikipedia.org/wiki/Unix_signal#POSIX_signals) and runs a graceful shutdown on the first signal. Calls `process.exit()` upon any future SIGINT signals. Relevant shutdown messages are also printed to the console.
+Listens for [SIGINT](https://en.wikipedia.org/wiki/Unix_signal#POSIX_signals) and runs a graceful shutdown on the first signal. Calls `process.exit(1)` upon any future SIGINT signals. Relevant shutdown messages are also printed to the console.
 
 #### listener
 
 Type: `function`
 
 A function that will gracefully shutdown your program. A common example is [Server#close()](https://nodejs.org/api/http.html#http_server_close_callback).
+
+## Related
+
+ - [app-ready](https://github.com/sholladay/app-ready) - Signal that your app is ready for use
 
 ## Contributing
 
