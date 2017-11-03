@@ -34,7 +34,7 @@ handleQuit(() => {
 
 Note that calling [`process.exit()`](https://nodejs.org/api/process.html#process_process_exit_code) is discouraged. Instead, you should close any server and database connections and let Node exit on its own, which it does automatically when it has no more work left to do.
 
-If you are worried about the process hanging and never cleanly exiting, you are encouraged to use your framework's [stop timeout](https://hapijs.com/api#serverstopoptions-callback).
+If you are worried about the process hanging and never cleanly exiting, you are encouraged to use your framework's [stop timeout](https://hapijs.com/api#-await-serverstopoptions).
 
 ## Use with PM2
 
