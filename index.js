@@ -15,7 +15,6 @@ module.exports = (shutdown) => {
         if (hurry) {
             console.error(bold.red('\nShutting down immediately. You monster!'));
             // Quit and tell the shell something went wrong.
-            // eslint-disable-next-line xo/no-process-exit
             process.exit(1);
         }
 

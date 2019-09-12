@@ -31,9 +31,9 @@
         "chalk": "^2.2.0"
     },
     "devDependencies": {
-        "ava": "^0.22.0",
-        "eslint-config-tidy": "^0.5.0",
-        "xo": "^0.18.0"
+        "ava": "^2.3.0",
+        "eslint-config-tidy": "^0.8.1",
+        "xo": "^0.24.0"
     },
     "keywords": [
         "pm2",
