@@ -1,4 +1,4 @@
-# handle-quit [![Build status for Handle Quit](https://img.shields.io/circleci/project/sholladay/handle-quit/master.svg "Build Status")](https://circleci.com/gh/sholladay/handle-quit "Builds")
+# handle-quit [![Build status for Handle Quit](https://travis-ci.com/sholladay/handle-quit.svg?branch=master "Build Status")](https://travis-ci.com/sholladay/handle-quit "Builds")
 
 > Support [graceful stop](http://pm2.keymetrics.io/docs/usage/signals-clean-restart/#graceful-stop) in your app
 
