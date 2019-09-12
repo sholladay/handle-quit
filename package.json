@@ -1,6 +1,6 @@
 {
     "name": "handle-quit",
-    "version": "0.1.1",
+    "version": "1.0.0",
     "description": "Support graceful stop in your app",
     "homepage": "https://github.com/sholladay/handle-quit",
     "main": "index.js",
