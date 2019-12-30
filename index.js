@@ -11,10 +11,12 @@ module.exports = (shutdown) => {
     installed = true;
 
     let hurry = false;
-    process.on('SIGINT', () => {
+
+    const onSignal = () => {
         if (hurry) {
             console.error(bold.red('\nShutting down immediately. You monster!'));
             // Quit and tell the shell something went wrong.
+            // eslint-disable-next-line unicorn/no-process-exit
             process.exit(1);
         }
 
@@ -23,5 +25,8 @@ module.exports = (shutdown) => {
         console.log('\nShutting down. Please wait or hit CTRL+C to force quit.');
 
         shutdown();
-    });
+    };
+
+    process.on('SIGINT', onSignal);
+    process.on('SIGTERM', onSignal);
 };

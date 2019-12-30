@@ -1,7 +1,8 @@
 import { execFile } from 'child_process';
 import test from 'ava';
 
-test.cb('handleQuit basics', (t) => {
+test.cb('graceful SIGINT', (t) => {
+    t.plan(3);
     const child = execFile('node', ['./fixture/graceful'], (error, stdout, stderr) => {
         t.is(error, null);
         t.is(stdout, '\nShutting down. Please wait or hit CTRL+C to force quit.\nQuit handled.\n');
@@ -13,7 +14,8 @@ test.cb('handleQuit basics', (t) => {
     }, 1000);
 });
 
-test.cb('hurries if second signal received', (t) => {
+test.cb('hurried SIGINT', (t) => {
+    t.plan(3);
     const child = execFile('node', ['./fixture/hurried'], (error, stdout, stderr) => {
         t.is(error.code, 1);
         t.is(stdout, '\nShutting down. Please wait or hit CTRL+C to force quit.\nQuit handled.\n');
@@ -24,6 +26,35 @@ test.cb('hurries if second signal received', (t) => {
         child.kill('SIGINT');
         setTimeout(() => {
             child.kill('SIGINT');
+        }, 100);
+    }, 1000);
+});
+
+test.cb('graceful SIGTERM', (t) => {
+    t.plan(3);
+    const child = execFile('node', ['./fixture/graceful'], (error, stdout, stderr) => {
+        t.is(error, null);
+        t.is(stdout, '\nShutting down. Please wait or hit CTRL+C to force quit.\nQuit handled.\n');
+        t.is(stderr, '');
+        t.end();
+    });
+    setTimeout(() => {
+        child.kill('SIGTERM');
+    }, 1000);
+});
+
+test.cb('hurried SIGTERM', (t) => {
+    t.plan(3);
+    const child = execFile('node', ['./fixture/hurried'], (error, stdout, stderr) => {
+        t.is(error.code, 1);
+        t.is(stdout, '\nShutting down. Please wait or hit CTRL+C to force quit.\nQuit handled.\n');
+        t.is(stderr, '\nShutting down immediately. You monster!\n');
+        t.end();
+    });
+    setTimeout(() => {
+        child.kill('SIGTERM');
+        setTimeout(() => {
+            child.kill('SIGTERM');
         }, 100);
     }, 1000);
 });
