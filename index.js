@@ -12,12 +12,12 @@ module.exports = (shutdown) => {
 
     let hurry = false;
 
-    const onSignal = () => {
+    const onSignal = (signal) => {
         if (hurry) {
             console.error(bold.red('\nShutting down immediately. You monster!'));
             // Quit and tell the shell something went wrong.
             // eslint-disable-next-line unicorn/no-process-exit
-            process.exit(1);
+            process.exit(128 + (signal === 'SIGINT' ? 2 : 15));
         }
 
         hurry = true;

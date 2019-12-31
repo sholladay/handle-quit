@@ -56,7 +56,7 @@ To support graceful _start_, see [app-ready](https://github.com/sholladay/app-re
 
 ### handleQuit(listener)
 
-Listens for [POSIX signals](https://en.wikipedia.org/wiki/Unix_signal#POSIX_signals) (`SIGINT`and `SIGTERM`) and runs a graceful shutdown on the first signal. Calls `process.exit(1)` when any further signals are received. Relevant shutdown messages are also printed to the console.
+Listens for [POSIX signals](https://en.wikipedia.org/wiki/Unix_signal#POSIX_signals) (`SIGINT`and `SIGTERM`) and calls the `listener` function on the first signal to perform a graceful shutdown. Calls [`process.exit()`](https://nodejs.org/api/process.html#process_process_exit_code) with an appropriate error code on any further signals that are received to perform an ungraceful shutdown. Relevant messages are also printed to the console.
 
 #### listener
 
